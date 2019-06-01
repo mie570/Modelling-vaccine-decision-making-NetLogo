@@ -276,9 +276,9 @@ to go
         show "vaccination-willineness-coverage:"
         print willingness / count turtles
 
-        export-plot "Vaccination Coverage" "/Users/An/Desktop/vaccination.csv"
-        export-plot "Vaccination Willingness Coverage" "/Users/An/Desktop/willingness.csv"
-        export-plot "Number of Active Nodes Spreading Good/Bad Information" "/Users/An/Desktop/nodes.csv"
+        ;export-plot "Vaccination Coverage" "/....csv"
+        ;export-plot "Vaccination Willingness Coverage" "/....csv"
+        ;export-plot "Number of Active Nodes Spreading Good/Bad Information" "/....csv"
 
         stop
       ]
