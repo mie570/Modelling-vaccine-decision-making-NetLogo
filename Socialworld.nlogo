@@ -81,7 +81,7 @@ to reset
   set-current-plot "Vaccination Coverage"
   clear-plot
 
-  set-current-plot "Vaccination Willingness Coverage"
+  set-current-plot "Willingness to Vaccinate"
   clear-plot
 
   set-current-plot "Number of Active Nodes Spreading Good/Bad Information"
@@ -277,7 +277,7 @@ to go
         print willingness / count turtles
 
         ;export-plot "Vaccination Coverage" "/....csv"
-        ;export-plot "Vaccination Willingness Coverage" "/....csv"
+        ;export-plot "Willingness to Vaccinate" "/....csv"
         ;export-plot "Number of Active Nodes Spreading Good/Bad Information" "/....csv"
 
         stop
@@ -455,7 +455,7 @@ to plot-vaccination-coverage
 end
 
 to plot-vaccination-willingness-coverage
-  set-current-plot "Vaccination Willingness Coverage"
+  set-current-plot "Willingness to Vaccinate"
   plotxy ticks willingness / count turtles
   display
 end
@@ -861,9 +861,9 @@ NIL
 HORIZONTAL
 
 TEXTBOX
-879
+891
 379
-1113
+1125
 407
 Resistance to update belief:
 11
@@ -985,7 +985,7 @@ PLOT
 11
 636
 183
-Vaccination Willingness Coverage
+Willingness to Vaccinate
 tick
 population-percentage
 0.0
@@ -1369,7 +1369,7 @@ false
 Polygon -7500403 true true 270 75 225 30 30 225 75 270
 Polygon -7500403 true true 30 75 75 30 270 225 225 270
 @#$#@#$#@
-NetLogo 6.0.4
+NetLogo 6.1.0
 @#$#@#$#@
 @#$#@#$#@
 @#$#@#$#@
