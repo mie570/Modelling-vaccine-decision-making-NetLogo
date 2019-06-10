@@ -219,11 +219,11 @@ to go
         show "vaccination-coverage:"
         print count turtles with [vaccinated? = true] / count turtles
 
-        show "vaccination-willineness-coverage:"
+        show "willineness-to-vaccinate:"
         print willingness / count turtles
 
         plot-vaccination-coverage
-        plot-vaccination-willingness-coverage
+        plot-willingness-to-Vaccinate
       ]
 
   ifelse count activated-nodes = 0
@@ -262,7 +262,7 @@ to go
       [ decision-making
         set num-vaccinated count turtles with [vaccinated? = true]
         plot-vaccination-coverage
-        plot-vaccination-willingness-coverage
+        plot-willingness-to-Vaccinate
 
        ]
 
@@ -273,7 +273,7 @@ to go
         show "vaccination-coverage:"
         print count turtles with [vaccinated? = true] / count turtles
 
-        show "vaccination-willineness-coverage:"
+        show "willineness-to-Vaccinate:"
         print willingness / count turtles
 
         ;export-plot "Vaccination Coverage" "/....csv"
@@ -355,14 +355,14 @@ end
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 to set-seeds
    if type-of-info = "good" or type-of-info = "both"
-      [ set new-good-activated-nodes n-of #-good-nodes turtles
+      [ set new-good-activated-nodes n-of #-good-seeds turtles
         ask new-good-activated-nodes [set info-type-spread "good"]
 ;       ask new-good-activated-nodes [set color blue]
         set activated-nodes new-good-activated-nodes
       ]
 
     if type-of-info = "bad" or type-of-info = "both"
-       [ set new-bad-activated-nodes n-of #-bad-nodes turtles with [not member? self activated-nodes]
+       [ set new-bad-activated-nodes n-of #-bad-seeds turtles with [not member? self activated-nodes]
          ask new-bad-activated-nodes [set info-type-spread "bad"]
 ;        ask new-bad-activated-nodes  [set color red]
          set activated-nodes (turtle-set activated-nodes new-bad-activated-nodes)
@@ -454,7 +454,7 @@ to plot-vaccination-coverage
   display
 end
 
-to plot-vaccination-willingness-coverage
+to plot-willingness-to-Vaccinate
   set-current-plot "Willingness to Vaccinate"
   plotxy ticks willingness / count turtles
   display
@@ -545,7 +545,7 @@ total-population
 total-population
 0
 2000
-200.0
+1210.0
 1
 1
 NIL
@@ -556,8 +556,8 @@ SLIDER
 225
 1068
 258
-#-good-nodes
-#-good-nodes
+#-good-seeds
+#-good-seeds
 0
 100
 10.0
@@ -684,8 +684,8 @@ SLIDER
 262
 1067
 295
-#-bad-nodes
-#-bad-nodes
+#-bad-seeds
+#-bad-seeds
 0
 100
 10.0
@@ -978,7 +978,7 @@ PENS
 "Reliers-willing" 1.0 0 -13345367 true "" "plot num-relier-vac"
 "Searchers-willing" 1.0 0 -2674135 true "" "plot num-searcher-vac"
 "Reliers-vaccinated" 1.0 0 -13840069 true "" "plot count turtles with [decision-maker-type = \"relier\" and vaccinated? = true]"
-"Searcher-vaccinated" 1.0 0 -2064490 true "" "plot count turtles with [decision-maker-type = \"searcher\" and vaccinated? = true]"
+"Searchers-vaccinated" 1.0 0 -2064490 true "" "plot count turtles with [decision-maker-type = \"searcher\" and vaccinated? = true]"
 
 PLOT
 320
@@ -986,8 +986,8 @@ PLOT
 636
 183
 Willingness to Vaccinate
-tick
-population-percentage
+NIL
+NIL
 0.0
 0.0
 0.0
